@@ -1036,7 +1036,7 @@ p2 = ggplot(df, aes(x = True_label, y = perc_correct, fill = True_label)) +
     plot.margin = margin(10, 10, 10, 10)
   )
 
-ggsave(filename = 'Figures/XXX_barplot_epigeneticplasticity.pdf', plot = p2, device = 'pdf', width = 8, height = 5,
+ggsave(filename = 'Figures/Supp2C_barplot_epigeneticplasticity.pdf', plot = p2, device = 'pdf', width = 8, height = 5,
        dpi = 600, units = 'in', bg = 'white')
 
 # Heatmap percentage of prediction score
@@ -1070,7 +1070,7 @@ p3 = Heatmap(
   heatmap_legend_param = list(title = "Probability"), column_names_rot = 30
 )
 
-pdf(file = 'Figures/XXX_PrbabilityHeatmap_epigeneticplasticity.pdf', width = 8, height = 6)
+pdf(file = 'Figures/Supp2c_PrbabilityHeatmap_epigeneticplasticity.pdf', width = 8, height = 6)
 draw(p3)
 dev.off()
 
