@@ -60,7 +60,7 @@ oreach(s = 1:length(samples))  %dopar% {
 dir.create("scRNA/NMF/Factors")
 dir.create("scRNA/NMF/Factors_H")
 
-# H matries
+# H matrices
 mat = NULL
 lf = list.files("scRNA/NMF/NMF_list/", pattern = "10runs")
 for(file in lf){
