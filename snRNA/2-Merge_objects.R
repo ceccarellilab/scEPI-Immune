@@ -64,6 +64,6 @@ FeaturePlot(seu, features = c("PMEL", "PTPRC"), blend = TRUE)
 
 # Adding response metadata
 seu$Responder = "NR"
-seu$Responder[seu$Patient %in% c("Patient 03", "Patient 14")] = "R"
+seu$Responder[seu$Patient %in% c("Patient 03", "Patient 13")] = "R"
 
 save(seu, file = "scRNA/RData/merged_object.RData")
