@@ -2640,4 +2640,3 @@ lgd = Legend(labels = c("Ctrl", "shNFATC2"),
 pdf(file = 'Figures/Fig6/Supp_6b_Heatmap_MP_NES.pdf', width = 5, height = 5)
 draw(h1, heatmap_legend_side = "bottom")
 dev.off()
-
