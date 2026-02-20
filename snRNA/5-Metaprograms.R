@@ -223,8 +223,8 @@ annot_df$Patient_cols = "white"
 annot_df$Patient_cols[annot_df$Patient %in% "Pat02"] = "#F8766D"
 annot_df$Patient_cols[annot_df$Patient %in% "Pat03"] = "#A3A500"
 annot_df$Patient_cols[annot_df$Patient %in% "Pat06"] = "#00BF7D"
-annot_df$Patient_cols[annot_df$Patient %in% "Pat14"] = "#00B0F6"
-annot_df$Patient_cols[annot_df$Patient %in% "Pat15"] = "#E76BF3"
+annot_df$Patient_cols[annot_df$Patient %in% "Pat13"] = "#00B0F6"
+annot_df$Patient_cols[annot_df$Patient %in% "Pat14"] = "#E76BF3"
 
 pat <- annot_df$Patient
 names(pat) <- annot_df$Col_programs
