@@ -1339,7 +1339,114 @@ pdf(file = 'Figures/Fig2/Supp_2c_Correlation_heatmap_signatures.pdf', width = 22
 h7+h8+h6+h1+h2+h3+h4+h5+h9
 dev.off()
 
-# S2E: Stemness 
+# S2E: Stemness ----
+load("scRNA/RData/malignant_subset.RData")
+df_cell <- seu@meta.data[, c("Metaprogram_assignment", "StemSig_top100", "orig.ident")] %>%
+  as.data.frame() %>%
+  dplyr::rename(sample_id = orig.ident)
+df_cell[1:5, ]
+df_cell$Metaprogram_assignment <- factor(
+  df_cell$Metaprogram_assignment,
+  levels = names(colori_mp),
+  labels = c("Cell Cycle", "Melanocytic I", "Hypoxia/EMT",
+             "Neural crest-like", "Antigen presentation/\nInterferon",
+             "Melanocytic II", "Wnt/B-catenin")
+)
+df_cell[1:5, ]
+colori_mp_nn <- colori_mp
+names(colori_mp_nn) <- levels(df_cell$Metaprogram_assignment)
+
+my_comp <- list(
+  "MP1MP5" = c(names(colori_mp_nn)[1], names(colori_mp_nn)[5]),
+  "MP2MP5" = c(names(colori_mp_nn)[2], names(colori_mp_nn)[5]),
+  "MP3MP5" = c(names(colori_mp_nn)[3], names(colori_mp_nn)[5]),
+  "MP4MP5" = c(names(colori_mp_nn)[4], names(colori_mp_nn)[5]),
+  "MP6MP5" = c(names(colori_mp_nn)[6], names(colori_mp_nn)[5]),
+  "MP7MP5" = c(names(colori_mp_nn)[7], names(colori_mp_nn)[5]),
+  "MP1MP4" = c(names(colori_mp_nn)[1], names(colori_mp_nn)[4]),
+  "MP2MP4" = c(names(colori_mp_nn)[2], names(colori_mp_nn)[4]),
+  "MP3MP4" = c(names(colori_mp_nn)[3], names(colori_mp_nn)[4]),
+  "MP6MP4" = c(names(colori_mp_nn)[6], names(colori_mp_nn)[4]),
+  "MP7MP4" = c(names(colori_mp_nn)[7], names(colori_mp_nn)[4])
+)
+
+pb = df_cell %>%
+  group_by(sample_id, Metaprogram_assignment) %>%
+  summarise(StemSig_top100 = median(StemSig_top100, na.rm = TRUE), .groups = "drop") %>% 
+  as.data.frame()
+
+res_list = vector("list", length(my_comp))
+nm_vec = names(my_comp)
+
+for (i in 1:length(my_comp)) {
+  
+  comp = my_comp[[i]]
+  nm   = nm_vec[i]
+  
+  tmp = pb %>%
+    dplyr::filter(Metaprogram_assignment %in% comp) %>%
+    dplyr::mutate(Metaprogram_assignment = droplevels(Metaprogram_assignment))
+  
+  n1 = sum(tmp$Metaprogram_assignment == comp[1])
+  n2 = sum(tmp$Metaprogram_assignment == comp[2])
+  
+  pval = wilcox.test(StemSig_top100 ~ Metaprogram_assignment, data = tmp)$p.value
+  
+  res_list[[i]] = data.frame(
+    comparison = nm,
+    group1 = comp[1],
+    group2 = comp[2],
+    p = pval,
+    stringsAsFactors = FALSE
+  )
+}
+
+res_tests = dplyr::bind_rows(res_list)
+
+y_max = max(pb$StemSig_top100, na.rm = TRUE)
+step_abs = 0.06 * diff(range(pb$StemSig_top100, na.rm = TRUE))
+
+p_anno = res_tests %>%
+  mutate(
+    y.position = y_max + row_number() * step_abs,
+    label = dplyr::case_when(
+      is.na(p)   ~ NA_character_,
+      p < 0.001  ~ "***",
+      p < 0.01   ~ "**",
+      p < 0.05   ~ "*",
+      TRUE       ~ "ns"
+    )
+  )
+
+p <- ggplot(pb, aes(x = Metaprogram_assignment, y = StemSig_top100, fill = Metaprogram_assignment)) +
+  geom_boxplot(width = 0.3, alpha = 0.6, outliers = TRUE) +
+  scale_fill_manual(values = colori_mp_nn) +
+  ggpubr::stat_pvalue_manual(
+    p_anno,
+    xmin = "group1", xmax = "group2",
+    y.position = "y.position",
+    label = "label",
+    tip.length = 0.01,
+    size = 4,
+    inherit.aes = FALSE
+  ) +
+  coord_cartesian(clip = "off") +   # <<< CHIAVE
+  labs(x = "", y = "Stemness Module Score") +
+  theme_minimal(base_size = 11) +
+  theme(
+    plot.margin = margin(t = 20, r = 5, b = 5, l = 5),  # spazio sopra
+    axis.text.x = element_text(size = 9, face = "bold", angle = 45, hjust = 1),
+    axis.text.y = element_text(size = 9),
+    axis.title.y = element_text(size = 10, face = "bold"),
+    axis.line = element_line(colour = "black"),
+    panel.grid = element_blank(),
+    legend.position = "none"
+  )
+p
+
+ggsave(filename = 'Revisioni/boxplot_stemness.pdf', plot = p, device = 'pdf', height = 5, width = 6,
+       dpi = 600, units = 'in', bg = 'white')
+
 # S2F-G: CellChat ----
 # R
 load("scRNA/CellChat/cellChat_object_Responder.RData")
