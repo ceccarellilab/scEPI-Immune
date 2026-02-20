@@ -133,3 +133,22 @@ rm(Soldatov_signatures)
 scores_df = seu@meta.data[, c(21:27, 64:69)]
 cor_result <- cor(scores_df, method = "pearson")
 save(cor_result, file = 'Revisioni/Correlation_signatures_Soldatov.RData')
+
+##################
+#### Stemness ####
+##################
+load("scRNA/RData/malignant_subset.RData")
+
+stemness_signature = as.data.frame(TCGAbiolinks::SC_PCBC_stemSig)
+stemness_signature = stemness_signature[stemness_signature$`TCGAbiolinks::SC_PCBC_stemSig` >= 0, , drop = FALSE]
+stemness_signature_top100 = stemness_signature[order(stemness_signature$`TCGAbiolinks::SC_PCBC_stemSig`, decreasing = T), , drop = FALSE]
+stemness_signature_top100 = stemness_signature_top100[1:100, ,drop = FALSE]
+
+Signatures_Stemness = list("StemSig" = rownames(stemness_signature),
+                           "StemSig_top100" = rownames(stemness_signature_top100),
+                           "EctoStemSig" = rownames(ecto_stemness_signature),
+                           "EctoStemSig_top100" = rownames(ecto_stemness_signature_top100))
+# View(seu@meta.data)
+seu = AddModuleScore(seu, features = Signatures_Stemness, name = "SigStem", search = TRUE, seed = 1234)
+colnames(seu@meta.data)[30:33] = names(Signatures_Stemness)
+save(seu, file = "scRNA/RData/malignant_subset.RData")
