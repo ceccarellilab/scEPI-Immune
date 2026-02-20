@@ -24,10 +24,10 @@ sort(table(seu$CellChat, exclude = NULL))
 seu = subset(seu, CellChat %in% c('Cycling cells', "non-classified"), invert = TRUE)
 dim(seu)
 
-table(seu$Responder, exclude = NULL, seu$orig.ident)
+table(seu$Responder, seu$orig.ident, exclude = NULL)
 
 # seu = subset(seu, Responder %in% 'R')
-seu = subset(seu, Responder %in% 'NR')
+# seu = subset(seu, Responder %in% 'NR')
 table(seu$CellChat)
 
 seu = NormalizeData(seu)
