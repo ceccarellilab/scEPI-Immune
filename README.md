@@ -13,108 +13,18 @@ To analyze how melanoma cells interact with their microenvironment and how cellu
 
 ***
 
-###  `snRNA-seq/`
-Contains all scripts for single-nucleus RNA-seq preprocessing, malignant state identification, meta-program extraction, functional characterization, regulatory inference, and cross-cohort validation.
-
-#### `01-Individual_preprocessing.R`
-Example of per-sample single-nucleus RNA-seq preprocessing, quality control, normalization, and initial clustering. Malignant cell annotation with SCEVAN.
-
-#### `02-Merge_objects.R`
-Merging of individual Seurat objects into a unified dataset for downstream analysis.
-
-#### `03-TME_annotation.R`
-Annotation of non-malignant compartments within the tumor microenvironment.
-
-#### `04-Run_NMF.R`
-Per-sample Non-negative Matrix Factorization (NMF) to extract malignant transcriptional programs.
-
-#### `05-Metaprograms.R`
-Identification of malignant transcriptional meta-programs.
-
-#### `06-Metaprogram_assignment.R`
-Per-cell meta-program scoring and assignment across samples.
-
-#### `07-DEGs_memento.ipynb`
-Differential expression analysis using Memento for state-specific contrasts.
-
-#### `08-GSEA_DEGs.R`
-Gene Set Enrichment Analysis of ranked differential expression results.
-
-#### `09-CellChat.R`
-Inference and comparison of ligand–receptor-mediated cell–cell communication networks.
-
-#### `10-Melanoma_bulk.R`
-Projection and validation of single-cell meta-programs in bulk melanoma transcriptomic datasets.
-
-#### `11-Pozniak_et_al.R`
-Cross-cohort validation and projection of meta-programs in independent melanoma datasets.
-
-#### `12-GRN_Pozniak.R`
-Preparation of expression matrices and transcription factor sets for gene regulatory network inference.
-
-#### `13-Script_pySCENIC.sbatch`
-SLURM submission script for pySCENIC-based gene regulatory network reconstruction.
-
-#### `14-NFATC2.R`
-Targeted analysis of NFATC2 regulatory activity and its association with resistant tumor states.
+### `snRNA-seq/`
+Contains the complete single-nucleus RNA-seq analytical workflow, including preprocessing and quality control, malignant cell identification, tumor microenvironment annotation, extraction and assignment of malignant transcriptional meta-programs, differential expression and functional enrichment analyses, inference of gene regulatory and cell–cell communication networks, and cross-cohort validation in independent single-cell and bulk melanoma datasets.
 
 ***
 
 ### `snATAC-seq/`
-Contains scripts for single-cell chromatin accessibility preprocessing, peak calling, regulatory analysis, and integration with RNA-defined tumor meta-programs.
-
-#### `01-Pre-processing.R`
-Single-cell ATAC-seq preprocessing, quality control, dimensional reduction, and chromatin accessibility profiling.
-
-#### `02-TME_annotation.R`
-Annotation of microenvironmental compartments based on chromatin accessibility signatures.
-
-#### `03-Metaprogram_assignment.R`
-Projection and assignment of RNA-defined malignant meta-programs onto ATAC profiles.
-
-#### `04-Peak_calling.R`
-Genome-wide peak calling and construction of consensus accessible chromatin regions after cell type annotation.
-
-#### `05-Motif_analysis.R`
-Transcription factor motif enrichment and regulatory activity analysis across tumor states.
+Contains the single-cell chromatin accessibility analysis workflow, including preprocessing and quality control, cell-type and tumor state annotation, projection of RNA-defined malignant meta-programs onto ATAC profiles, genome-wide peak calling and consensus region construction, and transcription factor motif enrichment analyses to characterize state-specific regulatory programs.
 
 ***
 
 ### `snRNA+snATAC/`
-Contains integrative multiome analyses combining gene expression and chromatin accessibility to characterize tumor cell states, regulatory programs, and transcription factor activity across malignant cell states.
-
-#### `01-Co-embedding_preprocessing.R`
-Preprocessing and construction of joint RNA–ATAC co-embeddings for SCENIC+ input.
-
-#### `02-SCENICplus_pyciTopic.py`
-Execution of SCENIC+ workflow using pycisTopic for topic modeling and regulatory network inference.
-
-#### `03-Create_cisTarget_db.sh`
-Generation of custom cisTarget databases required for motif enrichment and regulon detection.
-
-#### `04-snakemake_config.yaml`
-Configuration file specifying parameters and resources for the SCENIC+ Snakemake pipeline.
-
-#### `05-Save_SCENICplus_output.ipynb`
-Processing and export of SCENIC+ output objects for downstream analyses.
-
-#### `06-SCENICplus_downstream.R`
-Downstream analysis of SCENIC+ regulons and transcription factor activity across tumor states.
-
-#### `07-Overlap_SCENICplusEncode.R`
-Overlap analysis between SCENIC+ regulatory regions and ENCODE reference datasets.
-
-#### `08-Perturbation_regressors.py`
-Construction of regression models for transcription factor perturbation simulations.
-
-#### `09-perturbation_iteration.py`
-Iterative in silico perturbation of regulatory networks to assess state transitions.
-
-#### `10-perturbation_sbatch.sbatch`
-SLURM submission script for perturbation simulations.
-
-#### `11-MP4_perturbation.R`
-Analysis and visualization of perturbation effects on the MP4 (neural crest–like) malignant meta-program.
+Contains the integrative multiome analysis framework combining single-nucleus RNA-seq and ATAC-seq to define malignant cell states, reconstruct gene regulatory networks using SCENIC+, characterize transcription factor activity and cis-regulatory landscapes, benchmark regulatory regions against ENCODE references, and perform in silico transcription factor perturbation simulations to evaluate meta-program stability and state transitions.
 
 ***
 
