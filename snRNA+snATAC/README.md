@@ -31,3 +31,6 @@ Contains integrative multiome analyses combining gene expression and chromatin a
 ### `07-Overlap_SCENICplusEncode.R`
 - Intersects SCENIC+ eRegulon regions from prioritized meta-program–specific TFs with ENCODE hg38 cCRE annotations (pELS and dELS) using GRanges.
 - Quantifies the percentage of regulon regions overlapping protein-coding–linked cCREs per TF and meta-program, and exports a consolidated overlap table for downstream analyses.
+
+### `08-Perturbation_regressors.py`
+- Trains SCENIC+ gene expression regressors from scRNA counts using TF–target links derived from eRegulon metadata, and saves the fitted models for downstream in silico perturbation simulations.
