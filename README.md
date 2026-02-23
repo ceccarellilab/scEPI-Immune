@@ -14,17 +14,17 @@ To analyze how melanoma cells interact with their microenvironment and how cellu
 ***
 
 ### `snRNA-seq/`
-Contains the complete single-nucleus RNA-seq analytical workflow, including preprocessing and quality control, malignant cell identification, tumor microenvironment annotation, extraction and assignment of malignant transcriptional meta-programs, differential expression and functional enrichment analyses, inference of gene regulatory and cell–cell communication networks, and cross-cohort validation in independent single-cell and bulk melanoma datasets.
+This folder contains the complete single-nucleus RNA-seq analytical workflow, including preprocessing and quality control, malignant cell identification, tumor microenvironment annotation, extraction and assignment of malignant transcriptional meta-programs, differential expression and functional enrichment analyses, inference of gene regulatory and cell–cell communication networks, and cross-cohort validation in independent single-cell and bulk melanoma datasets.
 
 ***
 
 ### `snATAC-seq/`
-Contains the single-nucleus chromatin accessibility analysis workflow, including preprocessing and quality control, cell-type and tumor state annotation, projection of RNA-defined malignant meta-programs onto ATAC profiles, genome-wide peak calling and consensus region construction, and transcription factor motif enrichment analyses to characterize state-specific regulatory programs.
+This folder contains the single-nucleus chromatin accessibility analysis workflow, including preprocessing and quality control, cell-type and tumor state annotation, projection of RNA-defined malignant meta-programs onto ATAC profiles, genome-wide peak calling and consensus region construction, and transcription factor motif enrichment analyses to characterize state-specific regulatory programs.
 
 ***
 
 ### `snRNA_snATAC/`
-Contains the integrative multiome analysis framework combining single-nucleus RNA-seq and ATAC-seq to define malignant cell states, reconstruct gene regulatory networks using SCENIC+, characterize transcription factor activity and cis-regulatory landscapes, benchmark regulatory regions against ENCODE references, and perform in silico transcription factor perturbation simulations to evaluate meta-program stability and state transitions.
+This folder contains the integrative multiome analysis framework combining single-nucleus RNA-seq and ATAC-seq to define malignant cell states, reconstruct gene regulatory networks using SCENIC+, characterize transcription factor activity and cis-regulatory landscapes, benchmark regulatory regions against ENCODE references, and perform in silico transcription factor perturbation simulations to evaluate meta-program stability and state transitions.
 
 ***
 
