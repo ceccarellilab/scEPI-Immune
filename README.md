@@ -19,7 +19,7 @@ Contains the complete single-nucleus RNA-seq analytical workflow, including prep
 ***
 
 ### `snATAC-seq/`
-Contains the single-cell chromatin accessibility analysis workflow, including preprocessing and quality control, cell-type and tumor state annotation, projection of RNA-defined malignant meta-programs onto ATAC profiles, genome-wide peak calling and consensus region construction, and transcription factor motif enrichment analyses to characterize state-specific regulatory programs.
+Contains the single-nucleus chromatin accessibility analysis workflow, including preprocessing and quality control, cell-type and tumor state annotation, projection of RNA-defined malignant meta-programs onto ATAC profiles, genome-wide peak calling and consensus region construction, and transcription factor motif enrichment analyses to characterize state-specific regulatory programs.
 
 ***
 
