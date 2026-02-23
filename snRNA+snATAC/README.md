@@ -27,3 +27,7 @@ Contains integrative multiome analyses combining gene expression and chromatin a
 - Adds eRegulon AUCell scores as new Seurat assays and computes scaled meta-program–level averages for genes, regions, and TF expression.
 - Ranks and prioritizes transcription factors per meta-program based on differential TF expression, gene-based AUCell, and region-based AUCell activity.
 - Generates integrative heatmap visualizations of regulon activity (AUC), specificity (RSS), regulon size, and overlap with meta-program gene signatures for downstream interpretation.
+
+### `07-Overlap_SCENICplus_ENCODE_cCRE.R`
+- Intersects SCENIC+ eRegulon regions from prioritized meta-program–specific TFs with ENCODE hg38 cCRE annotations (pELS and dELS) using GRanges.
+- Quantifies the percentage of regulon regions overlapping protein-coding–linked cCREs per TF and meta-program, and exports a consolidated overlap table for downstream analyses.
