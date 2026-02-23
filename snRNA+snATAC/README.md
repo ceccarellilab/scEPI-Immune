@@ -18,3 +18,7 @@ Contains integrative multiome analyses combining gene expression and chromatin a
 
 ### `04-snakemake_config.yaml`
 - Defines input/output paths and analysis parameters for the SCENIC+ Snakemake workflow.
+
+### `05-Save_SCENICplus_output.ipynb`
+- Organizes and exports regulons, motif enrichments, and regulatory network objects for downstream interpretation and visualization.
+
