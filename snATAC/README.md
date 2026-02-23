@@ -25,6 +25,6 @@ Contains scripts for single-cell chromatin accessibility preprocessing, peak cal
 - Generates dedicated TME and malignant subsets for downstream accessibility and state-specific analyses.
 
 ### `05-Motif_analysis.R`
-- Adds TF motif annotations to malignant snATAC peaks (HOCOMOCO v13/JASPAR-format motifs) and computes motif enrichment in differentially accessible peaks across meta-programs.
+- Adds TF motif annotations to malignant snATAC peaks (HOCOMOCO v13 motifs) and computes motif enrichment in differentially accessible peaks across meta-programs.
 - Builds TF-by-metaprogram enrichment matrices and performs TF footprinting for selected regulators.
 - Integrates ENCODE cCRE annotations (PLS/pELS/dELS) to link motif-bearing peaks to target genes and runs pathway enrichment on linked genes.
