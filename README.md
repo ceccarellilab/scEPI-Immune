@@ -78,7 +78,7 @@ Genome-wide peak calling and construction of consensus accessible chromatin regi
 #### `05-Motif_analysis.R`
 Transcription factor motif enrichment and regulatory activity analysis across tumor states.
 
------
+====================
 
 ### `snRNA+snATAC/`
 Contains integrative multiome analyses combining gene expression and chromatin accessibility to characterize tumor cell states, regulatory programs, and transcription factor activity across malignant cell states.
@@ -116,7 +116,7 @@ SLURM submission script for perturbation simulations.
 #### `11-MP4_perturbation.R`
 Analysis and visualization of perturbation effects on the MP4 (neural crest–like) malignant meta-program.
 
---
+----
 
 ### Visium HD analysis
 This folder contains the complete workflow used to analyze high-resolution 10x Genomics VisiumHD melanoma samples and to integrate tumor metaprograms using Optimal Transport (OT).
