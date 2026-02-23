@@ -3,8 +3,15 @@
 ### Abstract
 Melanoma plasticity drives immune evasion and therapy resistance through dynamic cell-state transitions beyond genetic alterations. Although epigenetic remodeling is central to this process, its impact under therapeutic pressure remains unclear. We profiled longitudinal biopsies from melanoma patients treated in the phase Ib NIBIT-M4 epi-immunotherapy trial (NCT02608437, DNMT1 inhibitor plus anti-CTLA4) using single-cell multiome and spatial transcriptomics. Seven malignant meta-programs were identified, including a rare Wnt/β-catenin melanocytic state and a de-differentiated neural crest–like state enriched in non-responders. Spatial analyses showed that homotypic clustering stabilizes resistant programs, with neural crest–like cells forming compact niches. Responders displayed enrichment of antigen presentation/interferon program and coordinated T and B cell expansion, whereas non-responders retained stable neural crest–like clusters. Epigenetic therapy reactivated transposable elements, priming innate immunity and enhancing immunogenicity. NFATC2 emerged as a master regulator of neural crest–like states and resistance; its perturbation promoted differentiation and immunogenicity. These findings define mechanisms of resistance and nominate β-catenin and NFATC2 as therapeutic vulnerabilities.
 
-## 10X Multiome GEX+ATAC
-Single-nucleus multiome sequencing was performed to jointly profile gene expression (GEX) and chromatin accessibility (ATAC) from longitudinal melanoma biopsies.
+----
+
+### 10X Multiome GEX+ATAC
+To characterize the regulatory basis of melanoma cell-state plasticity under therapy, we performed single-nucleus multiome sequencing to jointly profile gene expression (GEX) and chromatin accessibility (ATAC) from longitudinal melanoma biopsies (13 samples from 5 patients; R n=2, NR n=3), enabling integrated analysis of transcriptional programs and their underlying regulatory landscapes.
+
+### Visium HD
+To analyze how melanoma cells interact with their microenvironment and how cellular neighborhoods shape tumor heterogeneity and progression, we investigated the heterogeneity and spatial organization of metastatic melanoma lesions under therapy in nine samples from four patients (R n=2, and NR n=2) using 10x Genomics VisiumHD profiling.
+
+----
 
 ###  `snRNA-seq/`
 Contains all scripts for single-nucleus RNA-seq preprocessing, malignant state identification, meta-program extraction, functional characterization, regulatory inference, and cross-cohort validation.
@@ -51,6 +58,8 @@ SLURM submission script for pySCENIC-based gene regulatory network reconstructio
 #### `14-NFATC2.R`
 Targeted analysis of NFATC2 regulatory activity and its association with resistant tumor states.
 
+--
+
 ### `snATAC-seq/`
 Contains scripts for single-cell chromatin accessibility preprocessing, peak calling, regulatory analysis, and integration with RNA-defined tumor meta-programs.
 
@@ -68,6 +77,8 @@ Genome-wide peak calling and construction of consensus accessible chromatin regi
 
 #### `05-Motif_analysis.R`
 Transcription factor motif enrichment and regulatory activity analysis across tumor states.
+
+--
 
 ### `snRNA+snATAC/`
 Contains integrative multiome analyses combining gene expression and chromatin accessibility to characterize tumor cell states, regulatory programs, and transcription factor activity across malignant cell states.
@@ -105,10 +116,7 @@ SLURM submission script for perturbation simulations.
 #### `11-MP4_perturbation.R`
 Analysis and visualization of perturbation effects on the MP4 (neural crest–like) malignant meta-program.
 
-----
-
-### Visium HD
-To analyze how melanoma cells interact with their microenvironment and how cellular neighborhoods shape tumor heterogeneity and progression, we investigated the heterogeneity and spatial organization of metastatic melanoma lesions under therapy in nine samples from four patients (R n=2, and NR n=2) using 10x Genomics VisiumHD profiling.
+--
 
 ### Visium HD analysis
 This folder contains the complete workflow used to analyze high-resolution 10x Genomics VisiumHD melanoma samples and to integrate tumor metaprograms using Optimal Transport (OT).
