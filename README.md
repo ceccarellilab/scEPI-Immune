@@ -72,7 +72,40 @@ Transcription factor motif enrichment and regulatory activity analysis across tu
 ### `snRNA+snATAC/`
 Contains integrative multiome analyses combining gene expression and chromatin accessibility to characterize tumor cell states, regulatory programs, and transcription factor activity across malignant cell states.
 
+#### `01-Co-embedding_preprocessing.R`
+Preprocessing and construction of joint RNA–ATAC co-embeddings for SCENIC+ input.
 
+#### `02-SCENICplus_pyciTopic.py`
+Execution of SCENIC+ workflow using pycisTopic for topic modeling and regulatory network inference.
+
+#### `03-Create_cisTarget_db.sh`
+Generation of custom cisTarget databases required for motif enrichment and regulon detection.
+
+#### `04-snakemake_config.yaml`
+Configuration file specifying parameters and resources for the SCENIC+ Snakemake pipeline.
+
+#### `05-Save_SCENICplus_output.ipynb`
+Processing and export of SCENIC+ output objects for downstream analyses.
+
+#### `06-SCENICplus_downstream.R`
+Downstream analysis of SCENIC+ regulons and transcription factor activity across tumor states.
+
+#### `07-Overlap_SCENICplusEncode.R`
+Overlap analysis between SCENIC+ regulatory regions and ENCODE reference datasets.
+
+#### `08-Perturbation_regressors.py`
+Construction of regression models for transcription factor perturbation simulations.
+
+#### `09-perturbation_iteration.py`
+Iterative in silico perturbation of regulatory networks to assess state transitions.
+
+#### `10-perturbation_sbatch.sbatch`
+SLURM submission script for perturbation simulations.
+
+#### `11-MP4_perturbation.R`
+Analysis and visualization of perturbation effects on the MP4 (neural crest–like) malignant meta-program.
+
+----
 
 ### Visium HD
 To analyze how melanoma cells interact with their microenvironment and how cellular neighborhoods shape tumor heterogeneity and progression, we investigated the heterogeneity and spatial organization of metastatic melanoma lesions under therapy in nine samples from four patients (R n=2, and NR n=2) using 10x Genomics VisiumHD profiling.
