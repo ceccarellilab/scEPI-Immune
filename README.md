@@ -8,46 +8,46 @@ Single-nucleus multiome sequencing was performed to jointly profile gene express
 
 ### snRNA
 
-#### 01-Individual_preprocessing.R
+#### `01-Individual_preprocessing.R`
 Example of per-sample single-nucleus RNA-seq preprocessing, quality control, normalization, and initial clustering. Malignant cell annotation with SCEVAN.
 
-#### 02-Merge_objects.R
+#### `02-Merge_objects.R`
 Merging of individual Seurat objects into a unified dataset for downstream analysis.
 
-#### 03-TME_annotation.R
+#### `03-TME_annotation.R`
 Annotation of non-malignant compartments within the tumor microenvironment.
 
-#### 04-Run_NMF.R
+#### `04-Run_NMF.R`
 Per-sample Non-negative Matrix Factorization (NMF) to extract malignant transcriptional programs.
 
-#### 05-Metaprograms.R
+#### `05-Metaprograms.R`
 Identification of malignant transcriptional meta-programs.
 
-#### 06-Metaprogram_assignment.R
+#### `06-Metaprogram_assignment.R`
 Per-cell meta-program scoring and assignment across samples.
 
-#### 07-DEGs_memento.ipynb
+#### `07-DEGs_memento.ipynb`
 Differential expression analysis using Memento for state-specific contrasts.
 
-#### 08-GSEA_DEGs.R
+#### `08-GSEA_DEGs.R`
 Gene Set Enrichment Analysis of ranked differential expression results.
 
-#### 09-CellChat.R
+#### `09-CellChat.R`
 Inference and comparison of ligand–receptor-mediated cell–cell communication networks.
 
-#### 10-Melanoma_bulk.R
+#### `10-Melanoma_bulk.R`
 Projection and validation of single-cell meta-programs in bulk melanoma transcriptomic datasets.
 
-#### 11-Pozniak_et_al.R
+#### `11-Pozniak_et_al.R`
 Cross-cohort validation and projection of meta-programs in independent melanoma datasets.
 
-#### 12-GRN_Pozniak.R
+#### `12-GRN_Pozniak.R`
 Preparation of expression matrices and transcription factor sets for gene regulatory network inference.
 
-#### 13-Script_pySCENIC.sbatch
+#### `13-Script_pySCENIC.sbatch`
 SLURM submission script for pySCENIC-based gene regulatory network reconstruction.
 
-#### 14-NFATC2.R
+#### `14-NFATC2.R`
 Targeted analysis of NFATC2 regulatory activity and its association with resistant tumor states.
 
 
