@@ -34,3 +34,11 @@ Contains integrative multiome analyses combining gene expression and chromatin a
 
 ### `08-Perturbation_regressors.py`
 - Trains SCENIC+ gene expression regressors from scRNA counts using TF–target links derived from eRegulon metadata, and saves the fitted models for downstream in silico perturbation simulations.
+
+### `09-perturbation_iteration.py`
+- Performs in silico TF knockdown simulations.
+
+### `10-perturbation_sbatch.sbatch`
+- SLURM submission script for transcription factor perturbation.
+
+### `11-MP4_perturbation.R`
