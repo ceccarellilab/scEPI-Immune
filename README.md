@@ -118,6 +118,11 @@ Analysis and visualization of perturbation effects on the MP4 (neural crest–li
 
 ***
 
+#### `Figure_script.R`
+Contains the original code used to generate main and supplementary figures.
+
+***
+
 ### Visium HD analysis
 This folder contains the complete workflow used to analyze high-resolution 10x Genomics VisiumHD melanoma samples and to integrate tumor metaprograms using Optimal Transport (OT).
 
