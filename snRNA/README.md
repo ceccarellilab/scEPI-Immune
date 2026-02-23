@@ -45,7 +45,7 @@ Contains scripts for single-nucleus RNA-seq preprocessing, malignant cell identi
 - Evaluates the ability of MP_4 and MP_5 proportions to discriminate responders vs non-responders.
 
 ### `12-GRN_Pozniak.R`
-- Prepares expression matrices, TF lists, and required inputs for gene regulatory network (GRN) inference in the external cohort.
+- Prepares expression matrices, TF lists, and required inputs for gene regulatory network inference in the external cohort.
 - Post-processes pySCENIC outputs to refine regulons using a per-TF weight cutoff (90th percentile of GRNBoost2 edge importance) and minimum target constraints, then saves high-confidence TF→target regulon lists for downstream regulatory analyses.
 
 ### `13-Script_pySCENIC.sbatch`
