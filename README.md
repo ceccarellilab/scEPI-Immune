@@ -23,7 +23,7 @@ Contains the single-nucleus chromatin accessibility analysis workflow, including
 
 ***
 
-### `snRNA+snATAC/`
+### `snRNA_snATAC/`
 Contains the integrative multiome analysis framework combining single-nucleus RNA-seq and ATAC-seq to define malignant cell states, reconstruct gene regulatory networks using SCENIC+, characterize transcription factor activity and cis-regulatory landscapes, benchmark regulatory regions against ENCODE references, and perform in silico transcription factor perturbation simulations to evaluate meta-program stability and state transitions.
 
 ***
