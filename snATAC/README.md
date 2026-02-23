@@ -1,7 +1,7 @@
 ## `snATAC-seq/`
 Contains scripts for single-cell chromatin accessibility preprocessing, peak calling, regulatory analysis, and integration with RNA-defined tumor meta-programs.
 
-### `01-Peak_calling.R`
+### `01-Pre-processing.R`
 - Builds a consensus peak set across samples from per-sample BED files.
 - Quantifies chromatin accessibility using fragment files.
 - Merges all samples into a single Signac/Seurat object with batch, patient, and week metadata.
@@ -18,3 +18,8 @@ Contains scripts for single-cell chromatin accessibility preprocessing, peak cal
 - Transfers RNA-derived malignant meta-program labels to scATAC malignant cells via label transfer (CCA anchors) using gene activity profiles.
 - Performs malignant-only snATAC dimensional reduction and clustering (TF-IDF/LSI) for state-level visualization.
 - Stores per-cell meta-program assignments in the combined ATAC object for downstream regulatory analyses.
+
+### `04-Peak_calling.R`
+- Performs MACS2 peak calling on the annotated scATAC dataset using fine-grained groups (cell types and malignant meta-programs).
+- Builds a new peak-by-cell matrix from the called peaks and re-runs the standard scATAC workflow (TF-IDF/LSI, clustering, t-SNE).
+- Generates dedicated TME and malignant subsets for downstream accessibility and state-specific analyses.
