@@ -58,7 +58,7 @@ SLURM submission script for pySCENIC-based gene regulatory network reconstructio
 #### `14-NFATC2.R`
 Targeted analysis of NFATC2 regulatory activity and its association with resistant tumor states.
 
----
+-----
 
 ### `snATAC-seq/`
 Contains scripts for single-cell chromatin accessibility preprocessing, peak calling, regulatory analysis, and integration with RNA-defined tumor meta-programs.
@@ -78,7 +78,7 @@ Genome-wide peak calling and construction of consensus accessible chromatin regi
 #### `05-Motif_analysis.R`
 Transcription factor motif enrichment and regulatory activity analysis across tumor states.
 
---
+-----
 
 ### `snRNA+snATAC/`
 Contains integrative multiome analyses combining gene expression and chromatin accessibility to characterize tumor cell states, regulatory programs, and transcription factor activity across malignant cell states.
