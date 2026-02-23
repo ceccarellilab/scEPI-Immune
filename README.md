@@ -58,7 +58,7 @@ SLURM submission script for pySCENIC-based gene regulatory network reconstructio
 #### `14-NFATC2.R`
 Targeted analysis of NFATC2 regulatory activity and its association with resistant tumor states.
 
---
+---
 
 ### `snATAC-seq/`
 Contains scripts for single-cell chromatin accessibility preprocessing, peak calling, regulatory analysis, and integration with RNA-defined tumor meta-programs.
