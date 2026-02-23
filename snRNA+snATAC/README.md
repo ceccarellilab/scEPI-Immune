@@ -15,3 +15,6 @@ Contains integrative multiome analyses combining gene expression and chromatin a
 ### `03-Create_cisTarget_db.sh`
 - Generates custom cisTarget motif-ranking databases from consensus peak regions by creating padded FASTA sequences and scanning them against curated motif collections.
 - Builds SCENIC+-compatible motif databases used for downstream cis-regulatory enrichment and regulon inference.
+
+### `04-snakemake_config.yaml`
+- Defines input/output paths and analysis parameters for the SCENIC+ Snakemake workflow.
