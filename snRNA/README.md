@@ -42,15 +42,15 @@ Contains scripts for single-nucleus RNA-seq preprocessing, malignant cell identi
 
 ### `11-Pozniak_et_al.R`
 - Validates and projects meta-program signatures in an independent melanoma single-cell cohort (Pozniak et al., 2024).
-- Quantifies cross-cohort reproducibility of malignant states and associated transcriptional programs.
+- Evaluates the ability of MP_4 and MP_5 proportions to discriminate responders vs non-responders.
 
 ### `12-GRN_Pozniak.R`
 - Prepares expression matrices, TF lists, and required inputs for gene regulatory network (GRN) inference in the external cohort.
-- Exports formatted files for pySCENIC and downstream regulon analysis.
+- Post-processes pySCENIC outputs to refine regulons using a per-TF weight cutoff (90th percentile of GRNBoost2 edge importance) and minimum target constraints, then saves high-confidence TF→target regulon lists for downstream regulatory analyses.
 
 ### `13-Script_pySCENIC.sbatch`
 - SLURM script to run the pySCENIC pipeline (GRN inference, motif enrichment, regulon scoring).
   
 ### `14-NFATC2.R`
-- Performs targeted analysis of NFATC2 regulatory activity across malignant states.
-- Links NFATC2-associated programs/regulons to resistant tumor phenotypes and state-specific signatures.
+- Quantifies NFATC2 regulon activity in bulk melanoma cohorts using pySCENIC regulons derived from the Pozniak dataset, and stores purity-filtered, treatment-stratified NFATC2 activity/expression metrics for downstream associations.
+- Analyzes an independent NFATC2 knockdown expression dataset (GSE101323) by computing differential expression, and performing signature enrichment (meta-program and differentiation program signatures by Tsoi et al., 2018 ) to assess transcriptional state shifts upon NFATC2 perturbation.
