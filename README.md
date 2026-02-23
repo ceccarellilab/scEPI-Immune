@@ -33,6 +33,11 @@ Contains the original code used to generate main and supplementary figures.
 
 ***
 
+#### `TE_workflow.R`
+This script integrates locus-specific Transposable Element (TE) quantification with single-nucleus multiome data to characterize TE expression, chromatin accessibility, and their antigenic potential. 
+It contains codes for generating the corresponding main and supplementary figures.
+***
+
 ### Visium HD analysis
 This folder contains the complete workflow used to analyze high-resolution 10x Genomics VisiumHD melanoma samples and to integrate tumor metaprograms using Optimal Transport (OT).
 
