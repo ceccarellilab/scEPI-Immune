@@ -12,3 +12,6 @@ Contains integrative multiome analyses combining gene expression and chromatin a
 - Binarizes topics and identifies candidate enhancer regions and differentially accessible regions (DARs) by meta-program.
 - Exports topic/DAR region sets as BED files for downstream SCENIC+ regulatory network inference.
 
+### `03-Create_cisTarget_db.sh`
+- Generates custom cisTarget motif-ranking databases from consensus peak regions by creating padded FASTA sequences and scanning them against curated motif collections.
+- Builds SCENIC+-compatible motif databases used for downstream cis-regulatory enrichment and regulon inference.
