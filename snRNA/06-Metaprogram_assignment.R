@@ -5,6 +5,7 @@ library(Seurat)
 library(dplyr)
 library(ggplot2)
 source('colori_finali.R')
+setwd('/home3/ciervo/scMULTIOME/Analisi')
 
 simplicity_score = function(df, percentage = 0.1, ncores = 20) {
   cclass = parallel::mclapply(1:nrow(df), FUN = function(x) {
