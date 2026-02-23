@@ -20,6 +20,11 @@ Contains scripts for single-cell chromatin accessibility preprocessing, peak cal
 - Stores per-cell meta-program assignments in the combined ATAC object for downstream regulatory analyses.
 
 ### `04-Peak_calling.R`
-- Performs MACS2 peak calling on the annotated scATAC dataset using fine-grained groups (cell types and malignant meta-programs).
-- Builds a new peak-by-cell matrix from the called peaks and re-runs the standard scATAC workflow (TF-IDF/LSI, clustering, t-SNE).
+- Performs MACS2 peak calling on the annotated snATAC dataset using fine-grained groups (cell types and malignant meta-programs).
+- Builds a new peak-by-cell matrix from the called peaks and re-runs the standard snATAC workflow (TF-IDF/LSI, clustering, t-SNE).
 - Generates dedicated TME and malignant subsets for downstream accessibility and state-specific analyses.
+
+### `05-Motif_analysis.R`
+- Adds TF motif annotations to malignant snATAC peaks (HOCOMOCO v13/JASPAR-format motifs) and computes motif enrichment in differentially accessible peaks across meta-programs.
+- Builds TF-by-metaprogram enrichment matrices and performs TF footprinting for selected regulators.
+- Integrates ENCODE cCRE annotations (PLS/pELS/dELS) to link motif-bearing peaks to target genes and runs pathway enrichment on linked genes.
