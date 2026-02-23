@@ -22,3 +22,8 @@ Contains integrative multiome analyses combining gene expression and chromatin a
 ### `05-Save_SCENICplus_output.ipynb`
 - Organizes and exports regulons, motif enrichments, and regulatory network objects for downstream interpretation and visualization.
 
+### `06-SCENICplus_downstream.R`
+- Imports SCENIC+ eRegulon metadata, AUCell matrices (gene- and region-based), and RSS specificity scores.
+- Adds eRegulon AUCell scores as new Seurat assays and computes scaled meta-program–level averages for genes, regions, and TF expression.
+- Ranks and prioritizes transcription factors per meta-program based on differential TF expression, gene-based AUCell, and region-based AUCell activity.
+- Generates integrative heatmap visualizations of regulon activity (AUC), specificity (RSS), regulon size, and overlap with meta-program gene signatures for downstream interpretation.
