@@ -29,7 +29,7 @@ This folder contains the integrative multiome analysis framework combining singl
 ***
 
 #### `Figure_script.R`
-Contains the original code used to generate main and supplementary figures.
+This script contains the original code used to generate main and supplementary figures.
 
 ***
 
